@@ -69,10 +69,10 @@ func RGBAToThumbhash(width int, height int, rgba []uint8) ([]byte, error) {
 	var (
 		lx = max(int(round(float32(float32(lLimit*width)/maxF(float32(width), float32(height))))), 1)
 		ly = max(int(round(float32(float32(lLimit*height)/maxF(float32(width), float32(height))))), 1)
-		l  = make([]float32, width*height)
-		p  = make([]float32, width*height)
-		q  = make([]float32, width*height)
-		a  = make([]float32, width*height)
+		l  = make([]float32, 0, width*height)
+		p  = make([]float32, 0, width*height)
+		q  = make([]float32, 0, width*height)
+		a  = make([]float32, 0, width*height)
 	)
 
 	// Convert the image from RGBA to LPQA (composite atop the average color)
